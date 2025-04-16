@@ -30,9 +30,13 @@
     "@types/react-dom": "19.0.3"
   },
   "pnpm": {
-    "allowedBuildDependencies": {
-      "bcrypt": true,
-      "sharp": true
+    "overrides": {
+      "bcrypt": {
+        "allowBuild": true
+      },
+      "sharp": {
+        "allowBuild": true
+      }
     }
   }
 }
