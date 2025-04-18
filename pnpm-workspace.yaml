@@ -2,3 +2,4 @@ packages:
   - "."
 onlyBuiltDependencies:
   - sharp
+  - "@next/swc-win32-x64-msvc"
