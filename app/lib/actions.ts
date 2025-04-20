@@ -85,7 +85,8 @@ export async function createInvoice(prevState: State, formData: FormData) {
       INSERT INTO invoices (customer_id, amount, status, date)
       VALUES (${customerId}::uuid, ${amountInCents}, ${status}, ${date})
     `;
-  } catch (error) {
+  } catch (err) {
+    console.error("Failed to create invoice:", err);
     return {
       message: "Database Error: Failed to create invoice. Please try again.",
     };
@@ -140,7 +141,8 @@ export async function updateInvoice(
       SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
       WHERE id = ${id}
     `;
-  } catch (error) {
+  } catch (err) {
+    console.error("Failed to update invoice:", err);
     return { message: "Database Error: Failed to Update Invoice." };
   }
 

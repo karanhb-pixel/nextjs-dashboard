@@ -1,8 +1,19 @@
-import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/font";
-import { Revenue } from "@/app/lib/definitions";
 import { fetchRevenue } from "@/app/lib/data";
+
+// Helper function to generate Y-axis labels
+function generateYAxis(revenue: { revenue: number }[]) {
+  const maxRevenue = Math.max(...revenue.map((month) => month.revenue));
+  const topLabel = Math.ceil(maxRevenue / 1000) * 1000;
+
+  const yAxisLabels: string[] = [];
+  for (let i = 0; i <= 4; i++) {
+    yAxisLabels.push(`$${((i * topLabel) / 4 / 1000).toFixed(0)}K`);
+  }
+
+  return { yAxisLabels, topLabel };
+}
 
 // This component is representational only.
 // For data visualization UI, check out:
