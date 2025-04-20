@@ -1,5 +1,16 @@
 packages:
-  - "."
+  - .
+
 onlyBuiltDependencies:
-  - sharp
-  - "@next/swc-win32-x64-msvc"
+  - '@img/sharp-win32-x64'
+  - bcrypt
+
+optionalDependencies:
+  - '@img/sharp-darwin-arm64'
+  - '@img/sharp-darwin-x64'
+  - '@img/sharp-linux-arm64'
+  - '@img/sharp-linux-arm'
+  - '@img/sharp-linux-x64'
+  - '@img/sharp-linuxmusl-arm64'
+  - '@img/sharp-linuxmusl-x64'
+  - '@img/sharp-wasm32'

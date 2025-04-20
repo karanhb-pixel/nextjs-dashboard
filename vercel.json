@@ -4,8 +4,8 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "npm i -g pnpm && pnpm install --no-frozen-lockfile",
-        "buildCommand": "cd \"$VERCEL_SRC_DIR\" && pnpm install --no-frozen-lockfile && pnpm run build"
+        "installCommand": "pnpm install",
+        "buildCommand": "pnpm run build"
       }
     }
   ],
